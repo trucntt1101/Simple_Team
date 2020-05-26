@@ -10,3 +10,8 @@ Full name: Le Thi Thuy Tien <br/>
 Email: hunhan1997@gmail.com <br/>
 Phone: 0908977298 <br/>
 FB link: https://www.facebook.com/hunhun.hunhan <br/>
+3. lntphuong's information: <br/>
+Full name: Le Nguyen Truc Phuong <br/>
+Email: phuongtruc.city96@gmail.com <br/>
+Phone: 0989778788 <br/>
+FB link: https://www.facebook.com/phuong.truc.925 <br/>

@@ -20,7 +20,8 @@ Full name: Tran Van Huynh <br/>
 Email: huynhptit2711@gmail.com <br/>
 Phone: 0352014241 <br/>
 FB link: https://www.facebook.com/tranvan.rin.3/ <br/>
-5. Full name: Vu Loc Duong. </br>
+5.VuLocDuong 's information: </br> 
+Full name: Vu Loc Duong. </br>
 Email: dyvnkinhte1997@gmail.com </br>
 Phone: 0976622302 </br>
 Faceboook:https://www.facebook.com/VuLocDuong.2306 <br/>

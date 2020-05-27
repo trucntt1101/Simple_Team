@@ -25,3 +25,8 @@ Full name: Vu Loc Duong. </br>
 Email: dyvnkinhte1997@gmail.com </br>
 Phone: 0976622302 </br>
 Faceboook:https://www.facebook.com/VuLocDuong.2306 <br/>
+5. ntcong 's information: </br> 
+Full name: Nguyen Thanh Cong. </br>
+Email: congnguyen9641@gmail.com </br>
+Phone: 0917292484 </br>
+Faceboook:https://www.facebook.com/tcong11 <br/>

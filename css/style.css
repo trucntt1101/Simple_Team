@@ -19,9 +19,16 @@ div.relative {
     color: #0D63DB!important;
     font-weight: bold;
 }
+.logo:hover {
+    color: #2c3691!important;
+}
 .nav-title {
     color:  #0D63DB!important;
 } 
+
+.nav-title:hover {
+    color: #2c3691!important;
+}
 .borderwid {
     position: relative;
     border-top-width: 0.5rem;

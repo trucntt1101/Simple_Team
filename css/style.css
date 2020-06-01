@@ -61,3 +61,26 @@ div.relative {
 .img-fluid:hover {
     opacity: 0.7;
 }
+
+div.fixed1 {
+    position: fixed;
+    top: 90;
+    left: 0;
+   }
+
+div.fixed2 {
+    position: absolute;
+    top: 30;
+    right: 0;
+   }
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+.sticky + .content {
+    padding-top: 102px;
+  }
+.row a {color: rgb(1, 5, 54);}
+.row div.col-9 h2 {color: rgb(1, 5, 54);}

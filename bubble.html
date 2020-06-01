@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div>
+        <nav class="navbar sticky-top navbar-expand-lg navbar navbar-dark" id="myHeader" style="background-color:  #BBF3FC;">
+            <a class="navbar-brand ml-5 logo" href="#">VISUALIZE SORTING ALGO</a>
+            <button class="navbar-toggler mr-5" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav nav-pills ml-5">
+                <li class="nav-item ml-lg-5">
+                  <a class="nav-link nav-title" href="homepage.html">Home</a>
+                </li>
+              <li class="nav-item ml-lg-5">
+                <a class="nav-link active text-light" href="bubble.html">Bubble sort</a>
+              </li>
+              <li class="nav-item ml-lg-5">
+                <a class="nav-link nav-title" href="insert.html">Insertion sort</a>
+              </li>
+              <li class="nav-item ml-lg-5">
+                  <a class="nav-link nav-title" href="select.html">Selection sort</a>
+              </li>
+              <li class="nav-item ml-lg-5">
+                  <a class="nav-link nav-title" href="quick.html">Quick sort</a>
+              </li>
+              </ul>  
+            </div>
+          </nav>
+          <div class="row" style="padding-top: 50px;">
+              <div class="col-3 border-left text-right fixed1 border-right border-primary">
+                  <a href="#1"><h2>Definition </h2></a>
+                  <a href="#2"><h2>How it work ?</h2></a>
+                  <a href="#3"><h2>Implementation</h2></a>
+                  <a href="#4"><h2 >Advantages </h2></a>
+                  <a href="#5"><h2>Disadvantages </h2></a>
+                  <a href="#6"><h2>Complexity </h2></a>
+                  <a href="#7"><h2>Visualization </h2></a> 
+                    
+              </div>
+              <div class="col-9 fixed2 pl-5">
+                  <div class="col text-center" style="color: firebrick;"> <h1>Bubble Sorting</h1></div>
+                   
+                    <div >
+                        <h2 id="1">Definition</h2>
+                        <p>Bubble sort is based on the idea of repeatedly comparing pairs of adjacent elements and then swapping their positions if they exist in the wrong order</p>
+                    </div>
+                    <div >
+                        <h2 id="2">How it works?</h2>
+                        <p>Bubble sort algorithms cycle through a list, analyzing pairs of elements from left to right, or beginning to end. If the leftmost element in the pair is less than the rightmost element, the pair will remain in that order. If the rightmost element is less than the leftmost element, then the two elements will be switched. This cycle repeats from beginning to end until a pass in which no switch occurs. </p>
+                    </div>
+                    <div >
+                        <h2 id="3">Implementation</h2>
+                        <p>asdsad dasfasfsf</p>
+                    </div>
+                    <div >
+                        <h2 id="4">Advantages</h2>
+                        <p>Bubble sort is one of the simplest sorting techniques and perhaps the only advantage it has over other techniques is that it can detect whether the input is already sorted.
+                         
+                            The primary advantage of the bubble sort is that it is popular and easy to implement. Furthermore, in the bubble sort, elements are swapped in place without using additional temporary storage, so the space requirement is at a minimum.
+                            </p>
+                    </div>
+                    <div >
+                        <h2 id="5">Disadvantages</h2>
+                        <p>The main disadvantage of the bubble sort method is the time it requires. With a running time of O(n^2), it is highly inefficient for large data sets. 
+                            The loop continues to run even if the array is sorted if the code is not optimised.
+                            </p>
+                    </div>
+                    <div>
+                        <h2 id="6">Complexity</h2>
+                        <p>Bubble sort has a worst-case and average complexity of О(n2), where n is the number of items being sorted. Most practical sorting algorithms have substantially better worst-case or average complexity, often O(n log n). Even other О(n2) sorting algorithms, such as insertion sort, generally run faster than bubble sort, and are no more complex. Therefore, bubble sort is not a practical sorting algorithm.</p>
+                    </div>
+                    <div >
+                        <h2 id="7">Visualizations</h2>
+                        <p>asdsad dasfasfsf</p>
+                    </div>
+                    
+              </div>
+          </div>
+    </div>
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+        </script>
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>

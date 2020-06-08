@@ -7,15 +7,26 @@
     <link rel="icon" href="img/swap.png"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
     <style>
       .container {
           padding: 0;
           margin: 0;
       }
+      .active {
+        border-radius: 1rem;
+        background-color: #BBF3FC!important;
+      }
+      .text-light {
+        color:  #BBF3FC!important;
+      }
     </style>
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light px-4" id="myHeader" style="background-color:  #BBF3FC;">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light px-4" id="myHeader" style="background-color:  #0D63DB;">
       <a class="navbar-brand ml-5 logo" href="homepage.html">VISUALIZE SORTING ALGO</a>
       <button class="navbar-toggler mr-5" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,19 +34,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav nav-pills ml-5">
           <li class="nav-item ml-lg-5">
-            <a class="nav-link nav-title" href="homepage.html">Home</a>
+            <a class="nav-link nav-title text-light" href="homepage.html">Home</a>
           </li>
         <li class="nav-item ml-lg-5">
-          <a class="nav-link nav-title" href="bubble.html">Bubble sort</a>
+          <a class="nav-link nav-title text-light" href="bubble.html">Bubble sort</a>
         </li>
         <li class="nav-item ml-lg-5">
-          <a class="nav-link nav-title" href="insert.html">Insertion sort</a>
+          <a class="nav-link nav-title text-light" href="insert.html">Insertion sort</a>
         </li>
         <li class="nav-item ml-lg-5">
-            <a class="nav-link nav-title" href="select.html">Selection sort</a>
+            <a class="nav-link nav-title text-light" href="select.html">Selection sort</a>
         </li>
         <li class="nav-item ml-lg-5">
-            <a class="nav-link active text-light" href="quick.html">Quick sort</a>
+            <a class="nav-link active text-dark" href="quick.html">Quick sort</a>
         </li>
         </ul>  
       </div>
@@ -62,10 +73,13 @@
                         QuickSort is a Divide and Conquer algorithm. 
                         It picks an element as pivot and partitions the given array around the picked pivot. 
                         There are many different versions of quickSort that pick pivot in different ways. <br>
-                        1. Always pick first element as pivot. <br>
-                        2. Always pick last element as pivot (implemented below). <br>
-                        3. Pick a random element as pivot. <br>
-                        4. Pick median as pivot.
+                        <span style="line-height: 2rem;">
+                           <b class="pl-4 pt-4">1. Always pick first element as pivot. </b><br>
+                           <b class="pl-4">2. Always pick last element as pivot (implemented below).</b><br>
+                           <b class="pl-4">3. Pick a random element as pivot.</b><br>
+                           <b class="pl-4">4. Pick median as pivot.</b>
+                        </span>
+                        
                       </p>
                   </div>
                   <div id="2">
@@ -390,34 +404,34 @@ int main()
                       <h3 >Complexity</h3>
                       <p class="mt-4">
                         Time taken by QuickSort in general can be written as following.
-                        <pre class="bg-light rounded pt-2"> T(n) = T(k) + T(n-k-1) + <img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-a372b7ef1ffaec3b4ad80e0141550990_l3.svg" class="ql-img-inline-formula quicklatex-auto-format"alt="\theta" title="Rendered by QuickLaTeX.com" height="19" width="11" style="vertical-align: 0px;">(n).
-                        </pre>
+                        <p class="bg-light rounded py-2"> \(T(n) = T(k) + T(n-k+1) + \theta(n)\)
+                        </p>
                       </p>
                       The first two terms are for two recursive calls, the last term is for the partition process. k is the number of elements which are smaller than pivot.
                       The time taken by QuickSort depends upon the input array and partition strategy. Following are three cases.
                       <p>
                         <p style="font-weight: bold;">Best Case:</p> The best case occurs when the partition process always picks the middle element as pivot. 
-                        Following is recurrence for best case.
-                        <pre class="bg-light rounded pt-2"> T(n) = 2T(n/2) + <img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-a372b7ef1ffaec3b4ad80e0141550990_l3.svg" class="ql-img-inline-formula quicklatex-auto-format"alt="\theta" title="Rendered by QuickLaTeX.com" height="19" width="11" style="vertical-align: 0px;">(n).
-                        </pre>
+                        Following is recurrence for best case. 
+                        <p class="bg-light rounded py-2"> \(T(n) = 2T(\frac{n}{2}) + \theta(n)\)
+                        </p>
                       </p>
                         <p style="font-weight: bold;">Average Case::</p> To do average case analysis, we need to consider all possible permutation of array and calculate time taken by every permutation which doesn’t look easy.
                         We can get an idea of average case by considering the case when partition puts O(n/9) elements in one set and O(9n/10) elements in other set. Following is recurrence for this case.
-                        <pre class="bg-light rounded pt-2">  T(n) = T(n/9) + T(9n/10) + <img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-a372b7ef1ffaec3b4ad80e0141550990_l3.svg" class="ql-img-inline-formula quicklatex-auto-format"alt="\theta" title="Rendered by QuickLaTeX.com" height="19" width="11" style="vertical-align: 0px;">(n).
-                        </pre>
+                        <p class="bg-light rounded py-2">  \(T(n) = T(\frac{n}{9}) + T(\frac{9n}{10}) + \theta(n)\)
+                        </p>
                       <p>
                         <p style="font-weight: bold;">Worst Case:</p> The worst case occurs when the partition process always picks greatest or smallest element as pivot. 
                         If we consider above partition strategy where last element is always picked as pivot, the worst case would occur when the array is already sorted in increasing or decreasing order. Following is recurrence for worst case.
-                        <pre class="bg-light rounded pt-2"> T(n) = T(0) + T(n-1) + <img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-a372b7ef1ffaec3b4ad80e0141550990_l3.svg" class="ql-img-inline-formula quicklatex-auto-format"alt="\theta" title="Rendered by QuickLaTeX.com" height="19" width="11" style="vertical-align: 0px;">(n).
-                        </pre>
+                        <p class="bg-light rounded py-2"> \(T(n) = T(0) + T(n-1) + \theta(n)\)
+                        </p>
                         <p>Which is equivalent to</p>
-                        <pre class="bg-light rounded pt-2"> T(n) = T(n-1) + <img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-a372b7ef1ffaec3b4ad80e0141550990_l3.svg" class="ql-img-inline-formula quicklatex-auto-format"alt="\theta" title="Rendered by QuickLaTeX.com" height="19" width="11" style="vertical-align: 0px;">(n).
-                        </pre>
+                        <p class="bg-light rounded py-2"> \(T(n) = T(n-1) + \theta(n)\)
+                        </p>
                       </p>
                   </div>
                   <div id="7">
                       <h3 >Visualizations</h3>
-                      <a class="btn btn-primary text-light my-4" href="visualize.html">
+                      <a class="btn btn-primary text-light my-4" href="visualizeQui.html">
                         <span >Click here to see Visualization</span>
                       </a>
                   </div>

@@ -4,82 +4,380 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Sort</title>
+    <link rel="icon" href="img/swap.png"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+      .container {
+          padding: 0;
+          margin: 0;
+      }
+    </style>
 </head>
 <body>
-    <div>
-        <nav class="navbar sticky-top navbar-expand-lg navbar navbar-dark" id="myHeader" style="background-color:  #BBF3FC;">
-            <a class="navbar-brand ml-5 logo" href="#">VISUALIZE SORTING ALGO</a>
-            <button class="navbar-toggler mr-5" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav nav-pills ml-5">
-                <li class="nav-item ml-lg-5">
-                  <a class="nav-link nav-title" href="homepage.html">Home</a>
-                </li>
-              <li class="nav-item ml-lg-5">
-                <a class="nav-link nav-title" href="bubble.html">Bubble sort</a>
-              </li>
-              <li class="nav-item ml-lg-5">
-                <a class="nav-link nav-title" href="insert.html">Insertion sort</a>
-              </li>
-              <li class="nav-item ml-lg-5">
-                  <a class="nav-link nav-title" href="select.html">Selection sort</a>
-              </li>
-              <li class="nav-item ml-lg-5">
-                  <a class="nav-link active text-light" href="quick.html">Quick sort</a>
-              </li>
-              </ul>  
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light px-4" id="myHeader" style="background-color:  #BBF3FC;">
+      <a class="navbar-brand ml-5 logo" href="homepage.html">VISUALIZE SORTING ALGO</a>
+      <button class="navbar-toggler mr-5" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav nav-pills ml-5">
+          <li class="nav-item ml-lg-5">
+            <a class="nav-link nav-title" href="homepage.html">Home</a>
+          </li>
+        <li class="nav-item ml-lg-5">
+          <a class="nav-link nav-title" href="bubble.html">Bubble sort</a>
+        </li>
+        <li class="nav-item ml-lg-5">
+          <a class="nav-link nav-title" href="insert.html">Insertion sort</a>
+        </li>
+        <li class="nav-item ml-lg-5">
+            <a class="nav-link nav-title" href="select.html">Selection sort</a>
+        </li>
+        <li class="nav-item ml-lg-5">
+            <a class="nav-link active text-light" href="quick.html">Quick sort</a>
+        </li>
+        </ul>  
+      </div>
+    </nav>
+    <article>
+      <div class="container">
+        <div class="row" >
+            <div class="col-lg-3 fixed1 text-right border-right border-primary h-100">
+              <nav class="mt-5 d-none d-lg-block ">
+                <a href="#1"><p>Definition </p></a>
+                <a href="#2"><p>How it work ?</p></a>
+                <a href="#3"><p>Implementation</p></a>
+                <a href="#4"><p>Advantages </p></a>
+                <a href="#5"><p>Disadvantages </p></a>
+                <a href="#6"><p>Complexity </p></a>
+                <a href="#7"><p>Visualization </p></a> 
+              </nav>  
             </div>
-          </nav>
-          <div class="row" style="padding-top: 50px;">
-              <div class="col-3 border-left text-right fixed1 border-right border-primary">
-                  <a href="#1"><h2>Definition </h2></a>
-                  <a href="#2"><h2>How it work ?</h2></a>
-                  <a href="#3"><h2>Implementation</h2></a>
-                  <a href="#4"><h2 >Advantages </h2></a>
-                  <a href="#5"><h2>Disadvantages </h2></a>
-                  <a href="#6"><h2>Complexity </h2></a>
-                  <a href="#7"><h2>Visualization </h2></a> 
+            <div class="col-lg-8 fixed2 px-md-5 pt-5 offset-lg-3">
+                <div class="col text-center" style="color: firebrick;"> <h1>Quick Sorting</h1></div>               
+                  <div id="1" class="pt-5">
+                      <h3>Definition</h3>
+                      <p class="my-4">Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list.</p>
+                  </div>
+                  <div id="2">
+                      <h3 >How it works?</h3>
+                      <p class="mt-4">Bubble sort algorithms cycle through a list, analyzing pairs of elements from left to right, 
+                        or beginning to end. If the leftmost element in the pair is less than the rightmost element, 
+                        the pair will remain in that order. If the rightmost element is less than the leftmost element, 
+                        then the two elements will be switched. This cycle repeats from beginning to end until a pass in which no switch occurs. </p>
+                        <p>Let see this example bellow</p>
+                        
+                        <div>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td>5</td>
+                                      <td>1</td>
+                                      <td>4</td>
+                                      <td>2</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <p>First Pass:</p>
+                          <p>Here, algorithm compares the first two elements, and swaps since 5 > 1.</p>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td class="table-danger">1</td>
+                                      <td class="table-danger">5</td>
+                                      <td>4</td>
+                                      <td>2</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <p>Swap since 5 > 4</p>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td >1</td>
+                                      <td class="table-danger">4</td>
+                                      <td class="table-danger">5</td>
+                                      <td>2</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <p>Swap since 5 > 2</p>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td >1</td>
+                                      <td >4</td>
+                                      <td class="table-danger">2</td>
+                                      <td class="table-danger">5</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <p>Now, since these elements are already in order (8 > 5), algorithm does not swap them.</p>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td >1</td>
+                                      <td >4</td>
+                                      <td>2</td>
+                                      <td >5</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <p> Second Pass:</p>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td >1</td>
+                                      <td >4</td>
+                                      <td>2</td>
+                                      <td>5</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <p>Swap since 4 > 2</p>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td >1</td>
+                                      <td class="table-danger">2</td>
+                                      <td class="table-danger">4</td>
+                                      <td>5</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td >1</td>
+                                      <td>2</td>
+                                      <td>4</td>
+                                      <td>5</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td >1</td>
+                                      <td>2</td>
+                                      <td>4</td>
+                                      <td>5</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <p>Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one 
+                            whole pass without any swap to know it is sorted.</p>
+                          <p>Third pass:</p>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td >1</td>
+                                      <td>2</td>
+                                      <td>4</td>
+                                      <td>5</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td >1</td>
+                                      <td>2</td>
+                                      <td>4</td>
+                                      <td>5</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td >1</td>
+                                      <td>2</td>
+                                      <td>4</td>
+                                      <td>5</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="table-responsive ml-2 ml-lg-0">
+                            <div class="card-body ">
+                              <table class="table table-bordered text-center">
+                                  <tbody>
+                                    <tr>
+                                      <td >1</td>
+                                      <td>2</td>
+                                      <td>4</td>
+                                      <td>5</td>
+                                      <td>8</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                            </div>
+                          </div>
+                         
+                        </div>
+                  </div>
+                  <div id="3">
+                      <h3 >Implementation</h3>
+                      <div class="row my-4">
+                        <div class="col-lg-8 relative offset-lg-2">
+<div id="editor">// C++ program for implementation of Bubble sort  
+#include &lt;bits/stdc++.h&gt;
+using namespace std; 
+  
+void swap(int *xp, int *yp)  
+{  
+    int temp = *xp;  
+    *xp = *yp;  
+    *yp = temp;  
+}  
+  
+// A function to implement bubble sort  
+void bubbleSort(int arr[], int n)  
+{  
+    int i, j;  
+    for (i = 0; i &lt; n-1; i++)      
+      
+    // Last i elements are already in place  
+    for (j = 0; j &lt; n-i-1; j++)  
+        if (arr[j] > arr[j+1])  
+            swap(&arr[j], &arr[j+1]);  
+}  
+  
+/* Function to print an array */
+void printArray(int arr[], int size)  
+{  
+    int i;  
+    for (i = 0; i &lt; size; i++)  
+        cout &lt;&lt; arr[i] &lt;&lt; " ";  
+    cout &lt;&lt; endl;  
+}  
+  
+// Driver code  
+int main()  
+{  
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};  
+    int n = sizeof(arr)/sizeof(arr[0]);  
+    bubbleSort(arr, n);  
+    cout &lt;&lt;"Sorted array: \n";  
+    printArray(arr, n);  
+    return 0;  
+}  
+  
+// This code is contributed by rathbhupendra</div>
+                        </div>
+                        <div class="row pt-4 px-3 w-100">
+                          <div class="col ">
+                            <p>Output</p>
+                            <pre class="bg-light rounded pt-2"> Sorted array:
+  11 12 22 25 34 64 90
+                            </pre>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div id="4">
+                      <h3 >Advantages</h3>
+                      <p class="mt-4">Bubble sort is one of the simplest sorting techniques and perhaps the only advantage it has over 
+                        other techniques is that it can detect whether the input is already sorted.</p>
                     
-              </div>
-              <div class="col-9 fixed2 pl-5">
-                  <div class="col text-center" style="color: firebrick;"> <h1>Quick Sort</h1></div>
-                   
-                    <div >
-                        <h2 id="1">Definition</h2>
-                        <p></p>
-                    </div>
-                    <div >
-                        <h2 id="2">How it works?</h2>
-                        <p></p>
-                    </div>
-                    <div >
-                        <h2 id="3">Implementation</h2>
-                        <p></p>
-                    </div>
-                    <div >
-                        <h2 id="4">Advantages</h2>
-                        <p></p>
-                    </div>
-                    <div >
-                        <h2 id="5">Disadvantages</h2>
-                        <p></p>
-                    </div>
-                    <div>
-                        <h2 id="6">Complexity</h2>
-                        <p></p>
-                    </div>
-                    <div >
-                        <h2 id="7">Visualizations</h2>
-                        <p></p>
-                    </div>
-                    
-              </div>
-          </div>
-    </div>
+                      <p>The primary advantage of the bubble sort is that it is popular and easy to implement. Furthermore, 
+                      in the bubble sort, elements are swapped in place without using additional temporary storage, so the 
+                      space requirement is at a minimum.
+                      </p>
+                  </div>
+                  <div id="5">
+                      <h3 >Disadvantages</h3>
+                      <p class="mt-4">The main disadvantage of the bubble sort method is the time it requires. With a running time of <b>О(n<sup>2</sup>)</b>, it is highly inefficient for large data sets. 
+                          The loop continues to run even if the array is sorted if the code is not optimised.
+                          </p>
+                  </div>
+                  <div id="6">
+                      <h3 >Complexity</h3>
+                      <p class="mt-4">Bubble sort has a worst-case and average complexity of <b>О(n<sup>2</sup>)</b>, where n is the number of items being sorted. 
+                        Most practical sorting algorithms have substantially better worst-case or average complexity, often <b>O(n log n)</b>. Even other <b>О(n<sup>2</sup>)</b> 
+                        sorting algorithms, such as insertion sort, generally run faster than bubble sort, and are no more complex. Therefore, bubble sort 
+                        is not a practical sorting algorithm.</p>
+
+                        <p>The only significant advantage that bubble sort has over most other algorithms, even quicksort, but not insertion sort, 
+                          is that the ability to detect that the list is sorted efficiently is built into the algorithm. When the list is already 
+                          sorted (best-case), the complexity of bubble sort is only <b>O(n)</b>. By contrast, most other algorithms, even those with better 
+                          average-case complexity, perform their entire sorting process on the set and thus are more complex. However, not only does 
+                          insertion sort share this advantage, but it also performs better on a list that is substantially sorted (having a small number of inversions).</p>
+                        
+                        <p>Bubble sort should be avoided in the case of large collections. It will not be efficient in the case of a reverse-ordered collection.</p>
+                  </div>
+                  <div id="7">
+                      <h3 >Visualizations</h3>
+                      <a class="btn btn-primary text-light my-4" href="visualize.html">
+                        <span >Click here to see Visualization</span>
+                      </a>
+                  </div>
+                  
+            </div>
+        </div>
+  </div>
+    </article>
     <script>
         window.onscroll = function() {myFunction()};
         
@@ -93,7 +391,14 @@
             header.classList.remove("sticky");
           }
         }
-        </script>
-    <script src="js/bootstrap.bundle.js"></script>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/c_cpp");
+    </script>
+    <script src="plugins/jquery-3.5.1.min.js" ></script>
+    <script src="js/bootstrap.bundle.js" ></script>
 </body>
 </html>

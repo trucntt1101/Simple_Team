@@ -7,16 +7,28 @@
     <link rel="icon" href="img/swap.png"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
     <style>
       .container {
           padding: 0;
           margin: 0;
       }
+
+      .active {
+        border-radius: 1rem;
+        background-color: #BBF3FC!important;
+      }
+      .text-light {
+        color:  #BBF3FC!important;
+      }
     </style>
 </head>
 <body>
 
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light px-4" id="myHeader" style="background-color:  #BBF3FC;">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark px-4" id="myHeader" style="background-color:  #0D63DB;">
       <a class="navbar-brand ml-5 logo" href="homepage.html">VISUALIZE SORTING ALGO</a>
       <button class="navbar-toggler mr-5" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -24,19 +36,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav nav-pills ml-5">
           <li class="nav-item ml-lg-5">
-            <a class="nav-link nav-title" href="homepage.html">Home</a>
+            <a class="nav-link nav-title text-light" href="homepage.html">Home</a>
           </li>
         <li class="nav-item ml-lg-5">
-          <a class="nav-link active text-light" href="bubble.html">Bubble sort</a>
+          <a class="nav-link active text-dark" href="bubble.html">Bubble sort</a>
         </li>
         <li class="nav-item ml-lg-5">
-          <a class="nav-link nav-title" href="insert.html">Insertion sort</a>
+          <a class="nav-link nav-title text-light" href="insert.html">Insertion sort</a>
         </li>
         <li class="nav-item ml-lg-5">
-            <a class="nav-link nav-title" href="select.html">Selection sort</a>
+            <a class="nav-link nav-title text-light" href="select.html">Selection sort</a>
         </li>
         <li class="nav-item ml-lg-5">
-            <a class="nav-link nav-title" href="quick.html">Quick sort</a>
+            <a class="nav-link nav-title text-light" href="quick.html">Quick sort</a>
         </li>
         </ul>  
       </div>
@@ -355,14 +367,14 @@ int main()
                   </div>
                   <div id="6">
                       <h3 >Complexity</h3>
-                      <p class="mt-4">Bubble sort has a worst-case and average complexity of <b>О(n<sup>2</sup>)</b>, where n is the number of items being sorted. 
-                        Most practical sorting algorithms have substantially better worst-case or average complexity, often <b>O(n log n)</b>. Even other <b>О(n<sup>2</sup>)</b> 
+                      <p class="mt-4">Bubble sort has a worst-case and average complexity of \(О(n^2)\), where n is the number of items being sorted. 
+                        Most practical sorting algorithms have substantially better worst-case or average complexity, often \(О(nlogn)\)</b>. Even other \(О(n^2)\) 
                         sorting algorithms, such as insertion sort, generally run faster than bubble sort, and are no more complex. Therefore, bubble sort 
                         is not a practical sorting algorithm.</p>
 
                         <p>The only significant advantage that bubble sort has over most other algorithms, even quicksort, but not insertion sort, 
                           is that the ability to detect that the list is sorted efficiently is built into the algorithm. When the list is already 
-                          sorted (best-case), the complexity of bubble sort is only <b>O(n)</b>. By contrast, most other algorithms, even those with better 
+                          sorted (best-case), the complexity of bubble sort is only \(О(n)\). By contrast, most other algorithms, even those with better 
                           average-case complexity, perform their entire sorting process on the set and thus are more complex. However, not only does 
                           insertion sort share this advantage, but it also performs better on a list that is substantially sorted (having a small number of inversions).</p>
                         
@@ -370,7 +382,7 @@ int main()
                   </div>
                   <div id="7">
                       <h3 >Visualizations</h3>
-                      <a class="btn btn-primary text-light my-4" href="visualize.html">
+                      <a class="btn btn-primary text-light my-4" href="visualizeBub.html">
                         <span >Click here to see Visualization</span>
                       </a>
                   </div>

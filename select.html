@@ -7,15 +7,26 @@
     <link rel="icon" href="img/swap.png"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
     <style>
       .container {
           padding: 0;
           margin: 0;
       }
+      .active {
+        border-radius: 1rem;
+        background-color: #BBF3FC!important;
+      }
+      .text-light {
+        color:  #BBF3FC!important;
+      }
     </style>
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light px-4" id="myHeader" style="background-color:  #BBF3FC;">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light px-4" id="myHeader" style="background-color:  #0D63DB;">
       <a class="navbar-brand ml-5 logo" href="homepage.html">VISUALIZE SORTING ALGO</a>
       <button class="navbar-toggler mr-5" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,19 +34,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav nav-pills ml-5">
           <li class="nav-item ml-lg-5">
-            <a class="nav-link nav-title" href="homepage.html">Home</a>
+            <a class="nav-link nav-title text-light" href="homepage.html">Home</a>
           </li>
         <li class="nav-item ml-lg-5">
-          <a class="nav-link nav-title" href="bubble.html">Bubble sort</a>
+          <a class="nav-link nav-title text-light" href="bubble.html">Bubble sort</a>
         </li>
         <li class="nav-item ml-lg-5">
-          <a class="nav-link nav-title" href="insert.html">Insertion sort</a>
+          <a class="nav-link nav-title text-light" href="insert.html">Insertion sort</a>
         </li>
         <li class="nav-item ml-lg-5">
-            <a class="nav-link active text-light" href="select.html">Selection sort</a>
+            <a class="nav-link active text-dark" href="select.html">Selection sort</a>
         </li>
         <li class="nav-item ml-lg-5">
-            <a class="nav-link nav-title" href="quick.html">Quick sort</a>
+            <a class="nav-link nav-title text-light" href="quick.html">Quick sort</a>
         </li>
         </ul>  
       </div>
@@ -369,7 +380,7 @@ int main()
                   </div>
                   <div id="7">
                       <h3 >Visualizations</h3>
-                      <a class="btn btn-primary text-light my-4" href="visualize.html">
+                      <a class="btn btn-primary text-light my-4" href="visualizeSel.html">
                         <span >Click here to see Visualization</span>
                       </a>
                   </div>

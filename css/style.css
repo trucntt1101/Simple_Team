@@ -71,7 +71,6 @@ div.fixed1 {
 div.fixed2 {
     position: absolute;
     top: 30;
-    right: 0;
    }
 .sticky {
     position: fixed;
@@ -84,3 +83,11 @@ div.fixed2 {
   }
 .row a {color: rgb(1, 5, 54);}
 .row div.col-9 h2 {color: rgb(1, 5, 54);}
+
+nav a:hover {
+    color: #0d63db;
+    text-decoration-color: #0d63db;
+}
+
+
+

@@ -58,15 +58,29 @@
                 <div class="col text-center" style="color: firebrick;"> <h1>Quick Sorting</h1></div>               
                   <div id="1" class="pt-5">
                       <h3>Definition</h3>
-                      <p class="my-4">Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list.</p>
+                      <p class="my-4">
+                        QuickSort is a Divide and Conquer algorithm. 
+                        It picks an element as pivot and partitions the given array around the picked pivot. 
+                        There are many different versions of quickSort that pick pivot in different ways. <br>
+                        1. Always pick first element as pivot. <br>
+                        2. Always pick last element as pivot (implemented below). <br>
+                        3. Pick a random element as pivot. <br>
+                        4. Pick median as pivot.
+                      </p>
                   </div>
                   <div id="2">
                       <h3 >How it works?</h3>
-                      <p class="mt-4">Bubble sort algorithms cycle through a list, analyzing pairs of elements from left to right, 
-                        or beginning to end. If the leftmost element in the pair is less than the rightmost element, 
-                        the pair will remain in that order. If the rightmost element is less than the leftmost element, 
-                        then the two elements will be switched. This cycle repeats from beginning to end until a pass in which no switch occurs. </p>
-                        <p>Let see this example bellow</p>
+                      <p class="mt-4">
+                        The key process in quickSort is partition(). 
+                        Target of partitions is, given an array and an element x of array as pivot, 
+                          put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, 
+                          and put all greater elements (greater than x) after x. 
+                        All this should be done in linear time. <br>
+                        There can be many ways to do partition, following pseudo code adopts the method given in CLRS book. 
+                        The logic is simple, we start from the leftmost element and keep track of index of smaller (or equal to) elements as i. 
+                        While traversing, if we find a smaller element, we swap current element with arr[i]. 
+                        Otherwise we ignore current element.
+                      </p>
                         
                         <div>
                           <div class="table-responsive ml-2 ml-lg-0">
@@ -74,156 +88,166 @@
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td>5</td>
-                                      <td>1</td>
-                                      <td>4</td>
-                                      <td>2</td>
-                                      <td>8</td>
+                                      <td>40</td>
+                                      <td>50</td>
+                                      <td>20</td>
+                                      <td>10</td>
+                                      <td>30</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
                           <p>First Pass:</p>
-                          <p>Here, algorithm compares the first two elements, and swaps since 5 > 1.</p>
+                          <p>Select last element as pivot. Here, we choose "30"</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td class="table-danger">1</td>
-                                      <td class="table-danger">5</td>
-                                      <td>4</td>
-                                      <td>2</td>
-                                      <td>8</td>
+                                      <td>40</td>
+                                      <td>50</td>
+                                      <td>20</td>
+                                      <td>10</td>
+                                      <td class="table-danger">30</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                          <p>Swap since 5 > 4</p>
+                          <p>Second Pass: </p>
+                          <p>Divide the elements in an array into 2 parts, 
+                            the smaller the pivot is on the left, the bigger the pivot is on the right.</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td class="table-danger">4</td>
-                                      <td class="table-danger">5</td>
-                                      <td>2</td>
-                                      <td>8</td>
+                                      <td class="table-success">40</td>
+                                      <td>50</td>
+                                      <td>20</td>
+                                      <td class="table-success">10</td>
+                                      <td class="table-danger">30</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                          <p>Swap since 5 > 2</p>
+                          <p>Swap 10 and 40</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td >4</td>
-                                      <td class="table-danger">2</td>
-                                      <td class="table-danger">5</td>
-                                      <td>8</td>
+                                      <td>10</td>
+                                      <td>50</td>
+                                      <td>20</td>
+                                      <td>40</td>
+                                      <td class="table-danger">30</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                          <p>Now, since these elements are already in order (8 > 5), algorithm does not swap them.</p>
+                          <p></p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td >4</td>
-                                      <td>2</td>
-                                      <td >5</td>
-                                      <td>8</td>
+                                      <td>10</td>
+                                      <td class="table-success">50</td>
+                                      <td class="table-success">20</td>
+                                      <td>40</td>
+                                      <td class="table-danger">30</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                          <p> Second Pass:</p>
+                          <p>Swap 20 and 50</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td >4</td>
-                                      <td>2</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td>10</td>
+                                      <td>20</td>
+                                      <td>50</td>
+                                      <td>40</td>
+                                      <td class="table-danger">30</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                          <p>Swap since 4 > 2</p>
+                          <p>Third Pass: </p>
+                          <p>Now, the smaller the pivot is on the left, the bigger the pivot is on the right.                           
+                              Next, we will compare the pivot with the first element in the "sub array on the right".
+                          </p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td class="table-danger">2</td>
-                                      <td class="table-danger">4</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td>10</td>
+                                      <td>20</td>
+                                      <td class="table-success">50</td>
+                                      <td>40</td>
+                                      <td class="table-danger">30</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
+                          <p>Swap 30 and 50</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td>10</td>
+                                      <td>20</td>
+                                      <td class="table-danger">30</td>
+                                      <td>40</td>
+                                      <td class="table-success">50</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
+                          <p>Forth Pass: </p>
+                          <p>
+                            Recheck the array, and continue to arrange the elements to the left,
+                             and arrange the elements to the right in the correct order.</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td>10</td>
+                                      <td>20</td>
+                                      <td>30</td>
+                                      <td>40</td>
+                                      <td>50</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
+                          <p>Fifth pass:</p>
                           <p>Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one 
                             whole pass without any swap to know it is sorted.</p>
-                          <p>Third pass:</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td class="table-success">10</td>
+                                      <td class="table-success">20</td>
+                                      <td>30</td>
+                                      <td>40</td>
+                                      <td>50</td>
                                     </tr>
                                   </tbody>
                               </table>
@@ -234,11 +258,11 @@
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td>10</td>
+                                      <td>20</td>
+                                      <td>30</td>
+                                      <td>40</td>
+                                      <td>50</td>
                                     </tr>
                                   </tbody>
                               </table>
@@ -249,11 +273,11 @@
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td>10</td>
+                                      <td>20</td>
+                                      <td>30</td>
+                                      <td class="table-success">40</td>
+                                      <td class="table-success">50</td>
                                     </tr>
                                   </tbody>
                               </table>
@@ -264,17 +288,16 @@
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td>10</td>
+                                      <td>20</td>
+                                      <td>30</td>
+                                      <td>40</td>
+                                      <td>50</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                         
                         </div>
                   </div>
                   <div id="3">
@@ -285,24 +308,37 @@
 #include &lt;bits/stdc++.h&gt;
 using namespace std; 
   
-void swap(int *xp, int *yp)  
-{  
-    int temp = *xp;  
-    *xp = *yp;  
-    *yp = temp;  
+void Swap(int &b, int &c)
+{
+	int temp;
+	temp=b;
+	b=c;
+	c=temp;
 }  
   
 // A function to implement bubble sort  
-void bubbleSort(int arr[], int n)  
-{  
-    int i, j;  
-    for (i = 0; i &lt; n-1; i++)      
-      
-    // Last i elements are already in place  
-    for (j = 0; j &lt; n-i-1; j++)  
-        if (arr[j] > arr[j+1])  
-            swap(&arr[j], &arr[j+1]);  
-}  
+void QuickSort(int a[100], int &l, int &r)
+{
+	int i,j,x;
+	l=0;
+	r=n;
+	i=l;
+	j=r;
+	do
+	{
+		while(a[i] < x) i++;
+		while(a[j] > x) j--;
+		if(i < j)
+			Swap(a[i],a[j]);
+		i++;
+		j--;
+	}while(i <= j);
+	if(i < r)
+		QuickSort(a,i,r);
+	if(j > l)
+		QuickSort(a,l,j);
+}
+  
   
 /* Function to print an array */
 void printArray(int arr[], int size)  
@@ -316,9 +352,9 @@ void printArray(int arr[], int size)
 // Driver code  
 int main()  
 {  
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};  
+    int arr[] = {10, 50, 20, 40, 30};  
     int n = sizeof(arr)/sizeof(arr[0]);  
-    bubbleSort(arr, n);  
+    QuickSort(arr, n);  
     cout &lt;&lt;"Sorted array: \n";  
     printArray(arr, n);  
     return 0;  
@@ -328,9 +364,8 @@ int main()
                         </div>
                         <div class="row pt-4 px-3 w-100">
                           <div class="col ">
-                            <p>Output</p>
-                            <pre class="bg-light rounded pt-2"> Sorted array:
-  11 12 22 25 34 64 90
+                            <p><h5>Output</h5></p>
+                            <pre class="bg-light rounded pt-2"> Sorted array: 10 20 30 40 50.
                             </pre>
                           </div>
                         </div>
@@ -338,34 +373,47 @@ int main()
                   </div>
                   <div id="4">
                       <h3 >Advantages</h3>
-                      <p class="mt-4">Bubble sort is one of the simplest sorting techniques and perhaps the only advantage it has over 
-                        other techniques is that it can detect whether the input is already sorted.</p>
-                    
-                      <p>The primary advantage of the bubble sort is that it is popular and easy to implement. Furthermore, 
-                      in the bubble sort, elements are swapped in place without using additional temporary storage, so the 
-                      space requirement is at a minimum.
+                      <p class="mt-4">
+                        The quick sort is regarded as the best sorting algorithm. 
+                        This is because of its significant advantage in terms of efficiency because it is able to deal well with a huge list of items. 
+                        Because it sorts in place, no additional storage is required as well.
                       </p>
                   </div>
                   <div id="5">
                       <h3 >Disadvantages</h3>
-                      <p class="mt-4">The main disadvantage of the bubble sort method is the time it requires. With a running time of <b>О(n<sup>2</sup>)</b>, it is highly inefficient for large data sets. 
-                          The loop continues to run even if the array is sorted if the code is not optimised.
-                          </p>
+                      <p class="mt-4">
+                        The slight disadvantage of quick sort is that its worst-case performance is similar to average performances of the bubble, insertion or selections sorts. 
+                        In general, the quick sort produces the most effective and widely used method of sorting a list of any item size.
+                      </p>
                   </div>
                   <div id="6">
                       <h3 >Complexity</h3>
-                      <p class="mt-4">Bubble sort has a worst-case and average complexity of <b>О(n<sup>2</sup>)</b>, where n is the number of items being sorted. 
-                        Most practical sorting algorithms have substantially better worst-case or average complexity, often <b>O(n log n)</b>. Even other <b>О(n<sup>2</sup>)</b> 
-                        sorting algorithms, such as insertion sort, generally run faster than bubble sort, and are no more complex. Therefore, bubble sort 
-                        is not a practical sorting algorithm.</p>
-
-                        <p>The only significant advantage that bubble sort has over most other algorithms, even quicksort, but not insertion sort, 
-                          is that the ability to detect that the list is sorted efficiently is built into the algorithm. When the list is already 
-                          sorted (best-case), the complexity of bubble sort is only <b>O(n)</b>. By contrast, most other algorithms, even those with better 
-                          average-case complexity, perform their entire sorting process on the set and thus are more complex. However, not only does 
-                          insertion sort share this advantage, but it also performs better on a list that is substantially sorted (having a small number of inversions).</p>
-                        
-                        <p>Bubble sort should be avoided in the case of large collections. It will not be efficient in the case of a reverse-ordered collection.</p>
+                      <p class="mt-4">
+                        Time taken by QuickSort in general can be written as following.
+                        <pre class="bg-light rounded pt-2"> T(n) = T(k) + T(n-k-1) + <img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-a372b7ef1ffaec3b4ad80e0141550990_l3.svg" class="ql-img-inline-formula quicklatex-auto-format"alt="\theta" title="Rendered by QuickLaTeX.com" height="19" width="11" style="vertical-align: 0px;">(n).
+                        </pre>
+                      </p>
+                      The first two terms are for two recursive calls, the last term is for the partition process. k is the number of elements which are smaller than pivot.
+                      The time taken by QuickSort depends upon the input array and partition strategy. Following are three cases.
+                      <p>
+                        <p style="font-weight: bold;">Best Case:</p> The best case occurs when the partition process always picks the middle element as pivot. 
+                        Following is recurrence for best case.
+                        <pre class="bg-light rounded pt-2"> T(n) = 2T(n/2) + <img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-a372b7ef1ffaec3b4ad80e0141550990_l3.svg" class="ql-img-inline-formula quicklatex-auto-format"alt="\theta" title="Rendered by QuickLaTeX.com" height="19" width="11" style="vertical-align: 0px;">(n).
+                        </pre>
+                      </p>
+                        <p style="font-weight: bold;">Average Case::</p> To do average case analysis, we need to consider all possible permutation of array and calculate time taken by every permutation which doesn’t look easy.
+                        We can get an idea of average case by considering the case when partition puts O(n/9) elements in one set and O(9n/10) elements in other set. Following is recurrence for this case.
+                        <pre class="bg-light rounded pt-2">  T(n) = T(n/9) + T(9n/10) + <img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-a372b7ef1ffaec3b4ad80e0141550990_l3.svg" class="ql-img-inline-formula quicklatex-auto-format"alt="\theta" title="Rendered by QuickLaTeX.com" height="19" width="11" style="vertical-align: 0px;">(n).
+                        </pre>
+                      <p>
+                        <p style="font-weight: bold;">Worst Case:</p> The worst case occurs when the partition process always picks greatest or smallest element as pivot. 
+                        If we consider above partition strategy where last element is always picked as pivot, the worst case would occur when the array is already sorted in increasing or decreasing order. Following is recurrence for worst case.
+                        <pre class="bg-light rounded pt-2"> T(n) = T(0) + T(n-1) + <img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-a372b7ef1ffaec3b4ad80e0141550990_l3.svg" class="ql-img-inline-formula quicklatex-auto-format"alt="\theta" title="Rendered by QuickLaTeX.com" height="19" width="11" style="vertical-align: 0px;">(n).
+                        </pre>
+                        <p>Which is equivalent to</p>
+                        <pre class="bg-light rounded pt-2"> T(n) = T(n-1) + <img src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-a372b7ef1ffaec3b4ad80e0141550990_l3.svg" class="ql-img-inline-formula quicklatex-auto-format"alt="\theta" title="Rendered by QuickLaTeX.com" height="19" width="11" style="vertical-align: 0px;">(n).
+                        </pre>
+                      </p>
                   </div>
                   <div id="7">
                       <h3 >Visualizations</h3>

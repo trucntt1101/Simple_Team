@@ -1,0 +1,23 @@
+{
+  "name": "VSA",
+  "version": "1.0.0",
+  "description": "",
+  "main": "homepage.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trucntt1101/Simple_Team.git"
+  },
+  "author": "Simple_Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trucntt1101/Simple_Team/issues"
+  },
+  "homepage": "https://github.com/trucntt1101/Simple_Team#readme",
+  "dependencies": {
+    "create-bootstrap": "^0.1.1",
+    "express": "^4.17.1"
+  }
+}

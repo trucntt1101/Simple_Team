@@ -69,15 +69,15 @@
                 <div class="col text-center" style="color: firebrick;"> <h1>Selection Sorting</h1></div>               
                   <div id="1" class="pt-5">
                       <h3>Definition</h3>
-                      <p class="my-4">Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list.</p>
+                      <p class="my-4">The Selection sort algorithm is based on the idea of finding the minimum or maximum element in an unsorted array and then putting it in its correct position in a sorted array.</p>
                   </div>
                   <div id="2">
                       <h3 >How it works?</h3>
-                      <p class="mt-4">Bubble sort algorithms cycle through a list, analyzing pairs of elements from left to right, 
-                        or beginning to end. If the leftmost element in the pair is less than the rightmost element, 
-                        the pair will remain in that order. If the rightmost element is less than the leftmost element, 
-                        then the two elements will be switched. This cycle repeats from beginning to end until a pass in which no switch occurs. </p>
-                        <p>Let see this example bellow</p>
+                      <br class="mt-4">The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array.</br>
+
+                        1) The subarray which is already sorted.</br>
+                        2) Remaining subarray which is unsorted.</br>
+                        In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.</p>
                         
                         <div>
                           <div class="table-responsive ml-2 ml-lg-0">
@@ -85,156 +85,116 @@
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td>5</td>
-                                      <td>1</td>
-                                      <td>4</td>
-                                      <td>2</td>
-                                      <td>8</td>
+                                      <td>64</td>
+                                      <td>25</td>
+                                      <td>12</td>
+                                      <td>22</td>
+                                      <td>11</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
                           <p>First Pass:</p>
-                          <p>Here, algorithm compares the first two elements, and swaps since 5 > 1.</p>
+                          <p>Here, Select the maximum element, we choose "64"</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td class="table-danger">1</td>
-                                      <td class="table-danger">5</td>
-                                      <td>4</td>
-                                      <td>2</td>
-                                      <td>8</td>
+                                      <td class="table-danger">64</td>
+                                      <td>25</td>
+                                      <td>12</td>
+                                      <td>22</td>
+                                      <td>11</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                          <p>Swap since 5 > 4</p>
+                          <p>Second Pass:</p>
+                          <p>Step 2 compares the first element and the last element. Here we swap 64 > 11</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td class="table-danger">4</td>
-                                      <td class="table-danger">5</td>
-                                      <td>2</td>
-                                      <td>8</td>
+                                      <td class="table-danger">11</td>
+                                      <td>25</td>
+                                      <td>12</td>
+                                      <td>22</td>
+                                      <td class="table-danger">64</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                          <p>Swap since 5 > 2</p>
+                          <p>Three Pass:</p>
+                          <p>We Swap since 25 > 12</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td >4</td>
-                                      <td class="table-danger">2</td>
-                                      <td class="table-danger">5</td>
-                                      <td>8</td>
+                                      <td >11</td>
+                                      <td class="table-danger">12</td>
+                                      <td class="table-danger">25</td>
+                                      <td>22</td>
+                                      <td>64</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                          <p>Now, since these elements are already in order (8 > 5), algorithm does not swap them.</p>
+                          <p>Last Pass:</p>
+                          <p>We Swap since 25 > 22</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td >4</td>
-                                      <td>2</td>
-                                      <td >5</td>
-                                      <td>8</td>
+                                      <td >11</td>
+                                      <td >12</td>
+                                      <td class="table-danger">22</td>
+                                      <td class="table-danger">25</td>
+                                      <td>64</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                          <p> Second Pass:</p>
+                          <p>Forth Pass: </p>
+                          <p>
+                            Recheck the array, and continue to arrange the elements to the left,
+                             and arrange the elements to the right in the correct order.</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td >4</td>
-                                      <td>2</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td>11</td>
+                                      <td>12</td>
+                                      <td>22</td>
+                                      <td>25</td>
+                                      <td>64</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                          <p>Swap since 4 > 2</p>
-                          <div class="table-responsive ml-2 ml-lg-0">
-                            <div class="card-body ">
-                              <table class="table table-bordered text-center">
-                                  <tbody>
-                                    <tr>
-                                      <td >1</td>
-                                      <td class="table-danger">2</td>
-                                      <td class="table-danger">4</td>
-                                      <td>5</td>
-                                      <td>8</td>
-                                    </tr>
-                                  </tbody>
-                              </table>
-                            </div>
-                          </div>
-                          <div class="table-responsive ml-2 ml-lg-0">
-                            <div class="card-body ">
-                              <table class="table table-bordered text-center">
-                                  <tbody>
-                                    <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
-                                    </tr>
-                                  </tbody>
-                              </table>
-                            </div>
-                          </div>
-                          <div class="table-responsive ml-2 ml-lg-0">
-                            <div class="card-body ">
-                              <table class="table table-bordered text-center">
-                                  <tbody>
-                                    <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
-                                    </tr>
-                                  </tbody>
-                              </table>
-                            </div>
-                          </div>
+                          <p>Fifth pass:</p>
                           <p>Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one 
                             whole pass without any swap to know it is sorted.</p>
-                          <p>Third pass:</p>
                           <div class="table-responsive ml-2 ml-lg-0">
                             <div class="card-body ">
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td class="table-success">11</td>
+                                      <td >12</td>
+                                      <td>22</td>
+                                      <td>25</td>
+                                      <td class="table-success">64</td>
                                     </tr>
                                   </tbody>
                               </table>
@@ -245,11 +205,11 @@
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td>11</td>
+                                      <td class="table-success">12</td>
+                                      <td class="table-success">22</td>
+                                      <td >25</td>
+                                      <td >64</td>
                                     </tr>
                                   </tbody>
                               </table>
@@ -260,11 +220,11 @@
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td>11</td>
+                                      <td >12</td>
+                                      <td class="table-success">22</td>
+                                      <td class="table-success">25</td>
+                                      <td >64</td>
                                     </tr>
                                   </tbody>
                               </table>
@@ -275,73 +235,79 @@
                               <table class="table table-bordered text-center">
                                   <tbody>
                                     <tr>
-                                      <td >1</td>
-                                      <td>2</td>
-                                      <td>4</td>
-                                      <td>5</td>
-                                      <td>8</td>
+                                      <td>11</td>
+                                      <td>12</td>
+                                      <td>22</td>
+                                      <td>25</td>
+                                      <td>64</td>
                                     </tr>
                                   </tbody>
                               </table>
                             </div>
                           </div>
-                         
                         </div>
                   </div>
                   <div id="3">
                       <h3 >Implementation</h3>
                       <div class="row my-4">
                         <div class="col-lg-8 relative offset-lg-2">
-<div id="editor">// C++ program for implementation of Bubble sort  
-#include &lt;bits/stdc++.h&gt;
-using namespace std; 
-  
-void swap(int *xp, int *yp)  
-{  
-    int temp = *xp;  
-    *xp = *yp;  
-    *yp = temp;  
-}  
-  
-// A function to implement bubble sort  
-void bubbleSort(int arr[], int n)  
-{  
-    int i, j;  
-    for (i = 0; i &lt; n-1; i++)      
-      
-    // Last i elements are already in place  
-    for (j = 0; j &lt; n-i-1; j++)  
-        if (arr[j] > arr[j+1])  
-            swap(&arr[j], &arr[j+1]);  
-}  
-  
-/* Function to print an array */
-void printArray(int arr[], int size)  
-{  
-    int i;  
-    for (i = 0; i &lt; size; i++)  
-        cout &lt;&lt; arr[i] &lt;&lt; " ";  
-    cout &lt;&lt; endl;  
-}  
-  
-// Driver code  
-int main()  
-{  
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};  
-    int n = sizeof(arr)/sizeof(arr[0]);  
-    bubbleSort(arr, n);  
-    cout &lt;&lt;"Sorted array: \n";  
-    printArray(arr, n);  
-    return 0;  
-}  
+<div id="editor">// C++ program for implementation of Selection sort  
+  #include <bits/stdc++.h> 
+  using namespace std; 
+    
+  void swap(int *xp, int *yp)  
+  {  
+      int temp = *xp;  
+      *xp = *yp;  
+      *yp = temp;  
+  }  
+    
+  void selectionSort(int arr[], int n)  
+  {  
+      int i, j, min_idx;  
+    
+      // One by one move boundary of unsorted subarray  
+      for (i = 0; i < n-1; i++)  
+      {  
+          // Find the minimum element in unsorted array  
+          min_idx = i;  
+          for (j = i+1; j < n; j++)  
+          if (arr[j] < arr[min_idx])  
+              min_idx = j;  
+    
+          // Swap the found minimum element with the first element  
+          swap(&arr[min_idx], &arr[i]);  
+      }  
+  }  
+    
+  /* Function to print an array */
+  void printArray(int arr[], int size)  
+  {  
+      int i;  
+      for (i=0; i < size; i++)  
+          cout << arr[i] << " ";  
+      cout << endl;  
+  }  
+    
+  // Driver program to test above functions  
+  int main()  
+  {  
+      int arr[] = {64, 25, 12, 22, 11};  
+      int n = sizeof(arr)/sizeof(arr[0]);  
+      selectionSort(arr, n);  
+      cout << "Sorted array: \n";  
+      printArray(arr, n);  
+      return 0;  
+  }  
+    
+  // This is code is contributed by rathbhupendra 
   
 // This code is contributed by rathbhupendra</div>
                         </div>
                         <div class="row pt-4 px-3 w-100">
                           <div class="col ">
                             <p>Output</p>
-                            <pre class="bg-light rounded pt-2"> Sorted array:
-  11 12 22 25 34 64 90
+                            <pre class="bg-light rounded pt-2"> Sorted array:  11 12 22 25 64
                             </pre>
                           </div>
                         </div>
@@ -349,34 +315,22 @@ int main()
                   </div>
                   <div id="4">
                       <h3 >Advantages</h3>
-                      <p class="mt-4">Bubble sort is one of the simplest sorting techniques and perhaps the only advantage it has over 
-                        other techniques is that it can detect whether the input is already sorted.</p>
-                    
-                      <p>The primary advantage of the bubble sort is that it is popular and easy to implement. Furthermore, 
-                      in the bubble sort, elements are swapped in place without using additional temporary storage, so the 
-                      space requirement is at a minimum.
+                      <p class="mt-4">The selection sort works by repeatedly going through the list of items, each time selecting an item according to its ordering and placing it in the correct position in the sequence.
+
+                        The main advantage of the selection sort is that it performs well on a small list. Furthermore, because it is an in-place sorting algorithm, no additional temporary storage is required beyond what is needed to hold the original list. 
+                       
                       </p>
                   </div>
                   <div id="5">
                       <h3 >Disadvantages</h3>
-                      <p class="mt-4">The main disadvantage of the bubble sort method is the time it requires. With a running time of <b>О(n<sup>2</sup>)</b>, it is highly inefficient for large data sets. 
-                          The loop continues to run even if the array is sorted if the code is not optimised.
+                      <p class="mt-4"> The primary disadvantage of the selection sort is its poor efficiency when dealing with a huge list of items. Similar to the bubble sort, the selection sort requires n-squared number of steps for sorting n elements. Additionally, its performance is easily influenced by the initial ordering of the items before the sorting process. Because of this, the selection sort is only suitable for a list of few elements that are in random order.
                           </p>
                   </div>
                   <div id="6">
                       <h3 >Complexity</h3>
-                      <p class="mt-4">Bubble sort has a worst-case and average complexity of <b>О(n<sup>2</sup>)</b>, where n is the number of items being sorted. 
-                        Most practical sorting algorithms have substantially better worst-case or average complexity, often <b>O(n log n)</b>. Even other <b>О(n<sup>2</sup>)</b> 
-                        sorting algorithms, such as insertion sort, generally run faster than bubble sort, and are no more complex. Therefore, bubble sort 
-                        is not a practical sorting algorithm.</p>
+                      <p class="mt-4">To find the minimum element from the array of  N elements, N-1 comparisons are required. After putting the minimum element in its proper position, the size of an unsorted array reduces to N-1 and then N-2 comparisons are required to find the minimum in the unsorted array.
 
-                        <p>The only significant advantage that bubble sort has over most other algorithms, even quicksort, but not insertion sort, 
-                          is that the ability to detect that the list is sorted efficiently is built into the algorithm. When the list is already 
-                          sorted (best-case), the complexity of bubble sort is only <b>O(n)</b>. By contrast, most other algorithms, even those with better 
-                          average-case complexity, perform their entire sorting process on the set and thus are more complex. However, not only does 
-                          insertion sort share this advantage, but it also performs better on a list that is substantially sorted (having a small number of inversions).</p>
-                        
-                        <p>Bubble sort should be avoided in the case of large collections. It will not be efficient in the case of a reverse-ordered collection.</p>
+                        Therefore <P class="bg-light rounded py-2"> ( N-1) + ( N-2) + ...  + 1 = ( N.( N-1 ))/ 2 </P>  comparisons N and  swaps result in the overall complexity of <P class="bg-light rounded py-2"> O ( n<sup>2</sup> )</P> </p>
                   </div>
                   <div id="7">
                       <h3 >Visualizations</h3>
